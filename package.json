@@ -1,0 +1,23 @@
+{
+  "name": "api-test-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Professional API test automation suite with Playwright, TypeScript, auth, CRUD, schema validation and CI.",
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "api:start": "tsx src/server/index.ts",
+    "report": "playwright show-report"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/express": "^5.0.1",
+    "@types/node": "^24.3.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.2"
+  }
+}
