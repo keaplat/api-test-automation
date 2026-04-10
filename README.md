@@ -1,16 +1,16 @@
 # API Test Automation
 
-Professional API automation suite built to look and behave like production-facing QA work rather than tutorial code.
+Suíte profissional de automação de API, construída para se parecer e se comportar como um trabalho real de QA voltado para produção, e não como código de tutorial.
 
-## Scope
+## Escopo
 
-- Authenticated REST API with login and bearer token flow.
-- CRUD coverage for a `projects` resource.
-- Positive and negative scenarios.
-- Schema validation with `zod`.
-- Dynamic test data factories.
-- HTML reporting with Playwright.
-- CI execution with GitHub Actions.
+- API REST autenticada com fluxo de login e bearer token
+- Cobertura CRUD para o recurso de projetos
+- Cenários positivos e negativos
+- Validação de schema com Zod
+- Fábricas de dados dinâmicos para teste
+- Relatórios HTML com Playwright
+- Execução em CI com GitHub Actions
 
 ## Stack
 
@@ -20,19 +20,19 @@ Professional API automation suite built to look and behave like production-facin
 - Zod
 - GitHub Actions
 
-## API covered
+## API coberta
 
-| Endpoint | Purpose |
+| Endpoint | Finalidade |
 |---|---|
-| `POST /api/auth/login` | Authenticate and issue bearer token |
-| `GET /health` | Health check for smoke validation |
-| `GET /api/projects` | List projects |
-| `POST /api/projects` | Create project |
-| `GET /api/projects/:id` | Fetch a specific project |
-| `PATCH /api/projects/:id` | Update status and metadata |
-| `DELETE /api/projects/:id` | Remove project |
+| `POST /api/auth/login` | Autenticar e emitir bearer token |
+| `GET /health` | Health check para validação smoke |
+| `GET /api/projects` | Listar projetos |
+| `POST /api/projects` | Criar projeto |
+| `GET /api/projects/:id` | Buscar um projeto específico |
+| `PATCH /api/projects/:id` | Atualizar status e metadados |
+| `DELETE /api/projects/:id` | Remover projeto |
 
-## Project structure
+## Estrutura do projeto
 
 ```text
 .
@@ -58,22 +58,3 @@ Professional API automation suite built to look and behave like production-facin
 `-- .github
     `-- workflows
         `-- api-tests.yml
-```
-
-## How to run
-
-```bash
-npm install
-npm test
-```
-
-## Test strategy
-
-- Smoke covers `health` and successful authentication.
-- Regression covers authenticated CRUD and negative cases.
-- Contracts are validated with runtime schema checks.
-- Data is generated dynamically to avoid hard-coded collisions.
-
-## CI
-
-The workflow runs on pushes to `main`, pull requests, and can be extended to scheduled regression later. It uploads the Playwright HTML report as an artifact.
